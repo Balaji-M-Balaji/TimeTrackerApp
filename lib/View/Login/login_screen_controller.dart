@@ -98,12 +98,11 @@ class LoginScreenController extends GetxController {
     final random = Random();
     randomNumber = (10000 + random.nextInt(99999));
 
-
       try {
         for (var interface in await NetworkInterface.list()) {
-          for (var addr in interface.addresses) {
-            if (addr.type == InternetAddressType.IPv4) {
-                ipAddress = addr.address;
+          for (var address in interface.addresses) {
+            if (address.type == InternetAddressType.IPv4) {
+                ipAddress = address.address;
               break;
             }
           }
